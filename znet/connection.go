@@ -8,8 +8,8 @@ import (
 	"net"
 	"sync"
 
-	"github.com/aceld/zinx/utils"
-	"github.com/aceld/zinx/ziface"
+	"github.com/easygone/zinx/utils"
+	"github.com/easygone/zinx/ziface"
 )
 
 //Connection 链接
@@ -57,7 +57,6 @@ func NewConnection(server ziface.IServer, conn *net.TCPConn, connID uint32, msgH
 	c.TCPServer.GetConnMgr().Add(c)
 	return c
 }
-
 //StartWriter 写消息Goroutine， 用户将数据发送给客户端
 func (c *Connection) StartWriter() {
 	fmt.Println("[Writer Goroutine is running]")

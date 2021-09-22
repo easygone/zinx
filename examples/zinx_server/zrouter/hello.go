@@ -1,9 +1,9 @@
 package zrouter
 
 import (
-	"github.com/aceld/zinx/ziface"
-	"github.com/aceld/zinx/zlog"
-	"github.com/aceld/zinx/znet"
+	"github.com/easygone/zinx/ziface"
+	"github.com/easygone/zinx/zlog"
+	"github.com/easygone/zinx/znet"
 )
 
 type HelloZinxRouter struct {

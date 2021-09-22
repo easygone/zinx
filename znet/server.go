@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"github.com/easygone/zinx/utils"
 	"github.com/easygone/zinx/ziface"
-	//"github.com/xtaci/kcp-go"
 	"net"
 )
 
@@ -92,7 +91,6 @@ func (s *Server) Start() {
 		if err != nil {
 			panic(err)
 		}
-
 		//已经监听成功
 		fmt.Println("start Zinx server  ", s.Name, " succ, now listenning...")
 
@@ -103,13 +101,13 @@ func (s *Server) Start() {
 		//3 启动server网络连接业务
 		for {
 			//3.1 阻塞等待客户端建立连接请求
-			conn, err := listener.AcceptTCP()
-			if err != nil {
-				fmt.Println("Accept err ", err)
-				continue
-			}
-			fmt.Println("Get conn remote addr = ", conn.RemoteAddr().String())
 
+				conn, err := listener.AcceptTCP()
+				if err != nil {
+					fmt.Println("Accept err ", err)
+					continue
+				}
+				fmt.Println("Get conn remote addr = ", conn.RemoteAddr().String())
 			//3.2 设置服务器最大连接控制,如果超过最大连接，那么则关闭此新的连接
 			if s.ConnMgr.Len() >= utils.GlobalObject.MaxConn {
 				conn.Close()
@@ -123,6 +121,7 @@ func (s *Server) Start() {
 			//3.4 启动当前链接的处理业务
 			go dealConn.Start()
 		}
+
 	}()
 }
 

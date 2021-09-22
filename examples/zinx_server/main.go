@@ -7,10 +7,10 @@
 package main
 
 import (
-	"github.com/aceld/zinx/examples/zinx_server/zrouter"
-	"github.com/aceld/zinx/ziface"
-	"github.com/aceld/zinx/zlog"
-	"github.com/aceld/zinx/znet"
+	"github.com/easygone/zinx/examples/zinx_server/zrouter"
+	"github.com/easygone/zinx/ziface"
+	"github.com/easygone/zinx/zlog"
+	"github.com/easygone/zinx/znet"
 )
 
 
